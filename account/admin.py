@@ -5,6 +5,7 @@ from .models import Patient, Caretaker
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
     list_display = [
+        'id',
         'patient',
         'gender',
         'risk',

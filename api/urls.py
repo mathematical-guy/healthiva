@@ -1,8 +1,12 @@
 from django.urls import path
+from rest_framework import urlpatterns
 from rest_framework.routers import SimpleRouter
-from .views import PatientAPI, CaretakerAPI
+from .views import PatientViewSet, CaretakerViewSet
 
 
-router = SimpleRouter()
-router.register(r'patient', PatientAPI)
-router.register(r'caretaker', CaretakerAPI)
+api_router = SimpleRouter()
+api_router.register(r'patient', PatientViewSet)
+api_router.register(r'caretaker', CaretakerViewSet)
+
+
+urlpatterns = api_router.urls

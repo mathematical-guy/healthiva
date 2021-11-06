@@ -5,13 +5,20 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 
 
-class PatientAPI(ModelViewSet):
+class PatientViewSet(ModelViewSet):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
     permission_classes = [IsAuthenticated]
+    
+    # def get_renderer_context(self):
+    #     context = super().get_renderer_context()
+    #     context['name'] = 'mohit'
+    #     return context
 
 
-class CaretakerAPI(ModelViewSet):
+
+
+class CaretakerViewSet(ModelViewSet):
     queryset = Caretaker.objects.all()
     serializer_class = CaretakerSerializer
     permission_classes = [IsAuthenticated]
